@@ -1,0 +1,3 @@
+001 Basitçe API sunan bir FLASK sunar.
+FLASK CORE sunar.
+flaskapicore olarak github a yüklenir
