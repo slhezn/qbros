@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> {% if title %}
+    <title>Qbros - {{ title }}</title>
+    {% else %}
+    <title>Qbros</title>
+    {% endif %}
+</head>
+
+<body>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4">
+                <div class="content-section">
+                    <h3>Dersler</h3>
+                    <p class='text-muted'>Soru eklenebilecek dersler
+                        <ul class="list-group">
+                            <a href="/1">
+                                <li class="list-group-item list-group-item-light">SAĞLIK İŞLETMELERİNDE LOJİSTİK YÖNETİMİ</li>
+                            </a>
+                            <a href="/2">
+                                <li class="list-group-item list-group-item-light">TEMEL HASTALIKLAR BİLGİSİ</li>
+                            </a>
+                            <a href="/3">
+                                <li class="list-group-item list-group-item-light">YÖNETİMDE GÜNCEL YAKLAŞIMLAR</li>
+                            </a>
+                            <a href="/4">
+                                <li class="list-group-item list-group-item-light">HALKLA İLİŞKİLER</li>
+                            </a>
+                            <a href="/5">
+                                <li class="list-group-item list-group-item-light">SAĞLIK EĞİTİMİ</li>
+                            </a>
+                            <a href="/6">
+                                <li class="list-group-item list-group-item-light">SAĞLIK İŞLETMELERİNDE TEKNOLOJİ YÖNETİMİ</li>
+                            </a>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

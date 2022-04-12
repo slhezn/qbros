@@ -71,12 +71,13 @@ class Question(db.Model):
     opt_C = db.Column(db.String)
     opt_D = db.Column(db.String)
     opt_E = db.Column(db.String)
+    answered = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     lesson_id = db.Column(db.Integer,
                           db.ForeignKey('lesson.lessonId'),
                           nullable=False)
 
-    def __init__(self, question, answer, opt_A, opt_B, opt_C, opt_D, opt_E,
+    def __init__(self, question, answer, opt_A, opt_B, opt_C, opt_D, opt_E, answered,
                  user_id, lesson_id):
         self.question = question
         self.answer = answer
@@ -85,5 +86,8 @@ class Question(db.Model):
         self.opt_C = opt_C
         self.opt_D = opt_D
         self.opt_E = opt_E
+        self.answered = answered
         self.user_id = user_id
         self.lesson_id = lesson_id
+
+
